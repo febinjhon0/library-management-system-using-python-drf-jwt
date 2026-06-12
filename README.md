@@ -79,5 +79,82 @@ This project allows users to register, login, manage books and authors, and borr
 | Python | Programming Language |
 
 ---
-
 # 📁 Project Structure
+
+
+libraryManagementSystem/
+│
+├── library/
+│ ├── migrations/
+│ ├── templates/
+│ │ └── library/
+│ │ ├── login.html
+│ │ ├── register.html
+│ │ ├── dashboard.html
+│ │ ├── books.html
+│ │ ├── authors.html
+│ │ └── add_book.html
+│ │
+│ ├── static/
+│ │ └── css/
+│ │ └── style.css
+│ │
+│ ├── models.py
+│ ├── views.py
+│ ├── api_views.py
+│ ├── serializers.py
+│ ├── urls.py
+│
+├── libraryManagementSystem/
+│ ├── settings.py
+│ ├── urls.py
+│
+├── manage.py
+└── requirements.txt
+
+# ⚙️ Installation Guide
+
+## 1️⃣ Clone Repository
+
+```bash
+git clone https://github.com/your-username/library-management-system.git
+cd library-management-system
+2️⃣ Create Virtual Environment
+python -m venv venv
+
+Activate environment:
+
+Windows
+
+venv\Scripts\activate
+
+Mac/Linux
+
+source venv/bin/activate
+3️⃣ Install Dependencies
+pip install -r requirements.txt
+4️⃣ Configure MySQL Database
+
+In settings.py:
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'library_db',
+        'USER': 'root',
+        'PASSWORD': 'your_password',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
+5️⃣ Run Migrations
+python manage.py makemigrations
+python manage.py migrate
+6️⃣ Create Superuser
+python manage.py createsuperuser
+7️⃣ Run Server
+python manage.py runserver
+
+Open browser:
+
+http://127.0.0.1:8000/
